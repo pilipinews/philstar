@@ -15,6 +15,11 @@ use Pilipinews\Common\Scraper as AbstractScraper;
 class Scraper extends AbstractScraper implements ScraperInterface
 {
     /**
+     * @var string[]
+     */
+    protected $removables = array('#related_block');
+
+    /**
      * Returns the contents of an article.
      *
      * @param  string $link
@@ -23,6 +28,8 @@ class Scraper extends AbstractScraper implements ScraperInterface
     public function scrape($link)
     {
         $this->prepare((string) $link);
+
+        $this->remove((array) $this->removables);
 
         $title = $this->title('#sports_title');
 
