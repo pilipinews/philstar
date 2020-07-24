@@ -10,7 +10,7 @@ php:
   - 7.3
   - 7.4
 
-# jobs: # TODO: Issues with SSL
+# jobs: # Issues with SSL
 #   include:
 #     - php: 5.3
 #       dist: precise
